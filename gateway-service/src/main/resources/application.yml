@@ -1,0 +1,20 @@
+server:
+    port: 8765
+
+spring:
+    application:
+        name: gateway-service
+    cloud:
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+                    lower-case-service-id: true
+            default-filters:
+                - AuthenticationFilterFactory
+
+token:
+    expiration:
+        duration: 15
+    signing:
+        key: 413F4428472A4E6250655368076D5970367336763979244226452948404D6352
